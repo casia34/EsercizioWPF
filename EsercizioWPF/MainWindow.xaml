@@ -1,0 +1,36 @@
+﻿<Window x:Class="EsercizioWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EsercizioWPF"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+       >
+
+
+    <Border Padding="20" Background="AntiqueWhite">
+        
+        <StackPanel>
+            <Border Background="Aquamarine" Height="35" Width="214">
+                <StackPanel Orientation="Horizontal">
+                    
+                    <TextBlock Text="cognome" Margin="8"></TextBlock>
+                    <ComboBox Width="90" Height="20" x:Name="CognomeUtente"
+                              ItemsSource="{Binding Path=Persone}" DisplayMemberPath="Cognome"
+                              SelectedItem="{Binding Path=PersonaSelezionata}"/>
+                    <Button Command="{Binding Path=SalutamiCommand}" Content="Salutami" Margin="8,0,0,0"/>
+                    
+                </StackPanel>
+            </Border>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock x:Name="SalutO"  Text="{Binding Path=TextSaluto}"></TextBlock>
+               
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+
+</Window>
